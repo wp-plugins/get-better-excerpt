@@ -1,11 +1,11 @@
 === Plugin Name ===
 Contributors: christopherross
 Plugin URI: http://thisismyurl.com/plugins/get-better-excerpt
-Tags: wordpress,easy,scheduled,posts
+Tags: wordpress,theme,excerpt,words
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=5962435
 Requires at least: 2.0.0
 Tested up to: 2.7.1
-Stable tag: 0.0.1
+Stable tag: 0.1.2
 
 
 The Get Better Excerpt plugin works almost identical to the built in get_the_excerpt() and the_excerpt() functions except it returns whole words instead of cutting off the excerpt as the existing function does.
@@ -65,8 +65,6 @@ By default the plugin includes a ... after the excerpt, you can remove it or cha
 Finally, if you'd like to copy the results into a variable you can return the results as follows:
 
  get_better_excerpt('show=false'); 
-
-
 
 = Is this plugin stable? = 
 

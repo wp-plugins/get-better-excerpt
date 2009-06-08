@@ -6,7 +6,7 @@ Description: An easy to use WordPress function to add scheduled posts to any the
 Author: Christopher Ross
 Tags: future, upcoming posts, upcoming post, upcoming, draft, Post, scheduled, preview
 Author URI: http://thisismyurl.com
-Version: 0.1.1
+Version: 0.1.2
 */
 
 /*  Copyright 2008  Christopher Ross  (email : info@thisismyurl.com)
@@ -57,6 +57,14 @@ function Easyget_better_excerpt_options() {
     <li><a href="http://forums.thisismyurl.com/">Support Forum</a></li>
     <li><a href="http://support.thisismyurl.com/">Report a Bug</a></li>
     <li><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=5962435">Donate with PayPal</a></li>
+    
+    <?php 
+	  	$pluginUpdate = file_get_contents('http://downloads.wordpress.org/plugin/get-better-excerpt.zip');
+	 	// scan for updates here
+		// include menu item if found
+	 ?>
+     
+     
     </ul>
     </div>
     </div>
