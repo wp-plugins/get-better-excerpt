@@ -4,8 +4,8 @@ Plugin URI: http://thisismyurl.com/plugins/get-better-excerpt
 Tags: wordpress,theme,excerpt,words, plugin, post, posts
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=5962435
 Requires at least: 2.0.0
-Tested up to: 2.7.1
-Stable tag: 0.1.2
+Tested up to: 2.8.0
+Stable tag: 0.1.3
 
 
 The Get Better Excerpt plugin works almost identical to the built in get_the_excerpt() and the_excerpt() functions except it returns whole words instead of cutting off the excerpt as the existing function does.
