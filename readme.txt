@@ -1,11 +1,11 @@
 === Plugin Name ===
 Contributors: christopherross
-Plugin URI: http://thisismyurl.com/plugins/get-better-excerpt
+Plugin URI: http://www.thisismyurl.com/software/get-better-excerpt
 Tags: wordpress,theme,excerpt,words, plugin, post, posts
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=5962435
 Requires at least: 2.0.0
 Tested up to: 2.8.0
-Stable tag: 0.1.3
+Stable tag: 1.0.0
 
 
 The Get Better Excerpt plugin works almost identical to the built in get_the_excerpt() and the_excerpt() functions except it returns whole words instead of cutting off the excerpt as the existing function does.
@@ -59,19 +59,27 @@ If you would like to load the content directly, skipping the entered excerpt:
  = Include a trailing character? = 
 By default the plugin includes a ... after the excerpt, you can remove it or change it by altering:
 
- get_better_excerpt('trail='); 
+ get_better_excerpt('trail= ...'); 
+
+ = Return a whole sentence = 
+If you would like to return whole sentences rather than words, you can control the number of sentences to return:
+
+ get_better_excerpt('sentence=1'); 
+
+
 
 = Echo vs. Return =
 Finally, if you'd like to copy the results into a variable you can return the results as follows:
 
  get_better_excerpt('show=false'); 
 
-= Is this plugin stable? = 
-
-Technically yes. Until I upgrade the version to 1.x, I still consider it to be in development but yes it has been tested and works well.
 
 == Donations ==
 If you would like to donate to help support future development of this tool, please visit [thisismyurl](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=5962435)
 
 
 == Change Log ==
+
+1.0.0 -
+Official Release
+Added Sentence options
