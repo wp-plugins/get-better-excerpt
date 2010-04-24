@@ -1,12 +1,12 @@
 <?php
 /*
 Plugin Name: Get Better Excerpt 
-Plugin URI: http://www.thisismyurl.com/software/get-better-excerpt
+Plugin URI: http://regentware.com/software/web-based/wordpress-plugins/get-better-excerpt-plugin-for-wordpress/
 Description: An easy to use WordPress function to add scheduled posts to any theme.
 Author: Christopher Ross
 Tags: future, upcoming posts, upcoming post, upcoming, draft, Post, scheduled, preview
 Author URI: http://www.thisismyurl.com
-Version: 1.0.0
+Version: 1.0.1
 */
 
 /*  Copyright 2008  Christopher Ross  (email : info@thisismyurl.com)
@@ -66,7 +66,7 @@ function Easyget_better_excerpt_options() {
                     <div class='misc-pub-section misc-pub-section-last'>
                           <ul class='options' style='padding-left: 20px;'>
 							<style>.options a {text-decoration:none;}</style>
-							<li><a href='http://www.thisismyurl.com/software/get-better-excerpt/'>Plugin Homepage</a></li>
+							<li><a href='http://www.thisismyurl.com/download/wordpress-downloads/get-better-excerpt/'>Plugin Homepage</a></li>
 							<li><a href='http://wordpress.org/extend/plugins/get-better-excerpt/'>Vote for this Plugin</a></li>
 							<li><a href='http://forums.thisismyurl.com/'>Support Forum</a></li>
 							<li><a href='http://support.thisismyurl.com/'>Report a Bug</a></li>";
@@ -76,7 +76,7 @@ if (function_exists(zip_open)) {
 	$file = "get-better-excerpt";
 			$lastupdate = get_option($file."-update");
 		if (strlen($lastupdate )==0 || date("U")-$lastupdate > $lastupdate) {
-			$pluginUpdate = file_get_contents('http://downloads.wordpress.org/plugin/'.$file.'.zip');
+			$pluginUpdate = @file_get_contents('http://downloads.wordpress.org/plugin/'.$file.'.zip');
 			$myFile = "../wp-content/uploads/cache-".$file.".zip";
 			$fh = fopen($myFile, 'w') or die("can't open file");
 			$stringData = $pluginUpdate;
