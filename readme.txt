@@ -4,7 +4,7 @@ Plugin URI: http://regentware.com/software/web-based/wordpress-plugins/get-bette
 Tags: wordpress,theme,excerpt,words, plugin, post, posts
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=5962435
 Requires at least: 2.0.0
-Tested up to: 2.9.4
+Tested up to: 3.0.0
 Stable tag: 1.0.1
 
 
