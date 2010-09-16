@@ -5,11 +5,11 @@ Plugin URI: http://regentware.com/software/web-based/wordpress-plugins/get-bette
 Description: An easy to use WordPress function to add scheduled posts to any theme.
 Author: Christopher Ross
 Tags: future, upcoming posts, upcoming post, upcoming, draft, Post, scheduled, preview
-Author URI: http://www.thisismyurl.com
-Version: 1.0.1
+Author URI: http://christopherross.ca
+Version: 1.0.2
 */
 
-/*  Copyright 2008  Christopher Ross  (email : info@thisismyurl.com)
+/*  Copyright 2008  Christopher Ross  (email : info@christopherross.ca)
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -44,7 +44,7 @@ function Easyget_better_excerpt_options() {
   <div id='icon-options-general' class='icon32'><br />
   </div>
   <h2>Get Better Excerpt Settings</h2>
-  <form name='addlink' id='addlink' method='post' action='https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=5962435'>
+  <form name='addlink' id='addlink' method='post' action='http://regentware.com/donate/?5962435'>
     <div id='poststuff' class='metabox-holder has-right-sidebar'>
       <div id='side-info-column' class='inner-sidebar'>
         <div id='side-sortables' class='meta-box-sortables'>
@@ -66,38 +66,12 @@ function Easyget_better_excerpt_options() {
                     <div class='misc-pub-section misc-pub-section-last'>
                           <ul class='options' style='padding-left: 20px;'>
 							<style>.options a {text-decoration:none;}</style>
-							<li><a href='http://www.thisismyurl.com/download/wordpress-downloads/get-better-excerpt/'>Plugin Homepage</a></li>
+							<li><a href='http://christopherross.ca/'>Plugin Homepage</a></li>
 							<li><a href='http://wordpress.org/extend/plugins/get-better-excerpt/'>Vote for this Plugin</a></li>
-							<li><a href='http://forums.thisismyurl.com/'>Support Forum</a></li>
-							<li><a href='http://support.thisismyurl.com/'>Report a Bug</a></li>";
+							<li><a href='http://forums.christopherross.ca/'>Support Forum</a></li>
+							<li><a href='http://support.christopherross.ca/'>Report a Bug</a></li>";
 							
 							
-if (function_exists(zip_open)) {
-	$file = "get-better-excerpt";
-			$lastupdate = get_option($file."-update");
-		if (strlen($lastupdate )==0 || date("U")-$lastupdate > $lastupdate) {
-			$pluginUpdate = @file_get_contents('http://downloads.wordpress.org/plugin/'.$file.'.zip');
-			$myFile = "../wp-content/uploads/cache-".$file.".zip";
-			$fh = fopen($myFile, 'w') or die("can't open file");
-			$stringData = $pluginUpdate;
-			fwrite($fh, $stringData);
-			fclose($fh);
-			
-			$zip = zip_open($myFile);
-			while ($zip_entry = zip_read($zip)) {
-				if (zip_entry_name($zip_entry) == $file."/".$file.".php") {$size = zip_entry_filesize($zip_entry);}
-			}
-			zip_close($zip);
-			unlink($myFile);
-			
-			if ($size != filesize("../wp-content/plugins/".$file."/".$file.".php")) {?>    
-	
-				<li>This plugin is out of date. <a href='http://downloads.wordpress.org/plugin/<?php echo $file;?>.zip'>Please <strong>download</strong> the latest version.</a></li>
-	
-	<?php
-		} 
-		update_option($file."-update", date('U'));
-}}
 							
 					echo "		</ul>
                     </div>

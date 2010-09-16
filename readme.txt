@@ -1,11 +1,11 @@
 === Plugin Name ===
 Contributors: christopherross
-Plugin URI: http://regentware.com/software/web-based/wordpress-plugins/get-better-excerpt-plugin-for-wordpress/
+Plugin URI: http://regentware.com/37/get-better-excerpt-for-wordpress/
 Tags: wordpress,theme,excerpt,words, plugin, post, posts
-Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=5962435
+Donate link:  http://regentware.com/donate/
 Requires at least: 2.0.0
-Tested up to: 3.0.0
-Stable tag: 1.0.1
+Tested up to: 3.0.1
+Stable tag: 1.0.2
 
 
 The Get Better Excerpt plugin works almost identical to the built in get_the_excerpt() and the_excerpt() functions except it returns whole words instead of cutting off the excerpt as the existing function does.
@@ -21,7 +21,7 @@ To install the plugin, please upload the folder to your plugins folder and activ
 == Screenshots ==
 
 == Updates ==
-Updates to the plugin will be posted here, to [thisismyurl](http://www.thisismyurl.com/plugins/get-better-excerpt)
+Updates to the plugin will be posted here, to [Regent Software](http://christopherross.ca/plugins/get-better-excerpt)
 
 == Frequently Asked Questions ==
 
@@ -75,10 +75,14 @@ Finally, if you'd like to copy the results into a variable you can return the re
 
 
 == Donations ==
-If you would like to donate to help support future development of this tool, please visit [thisismyurl](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=5962435)
+If you would like to donate to help support future development of this tool, please visit [Regent Software](http://regentware.com/donate/?5962435)
 
 
 == Change Log ==
+
+=  1.0.2 =
+
+* removed update functions
 
 1.0.0 -
 Official Release
