@@ -1,15 +1,15 @@
 <?php
 /*
 Plugin Name: Get Better Excerpt 
-Plugin URI: http://regentware.com/software/web-based/wordpress-plugins/get-better-excerpt-plugin-for-wordpress/
+Plugin URI: http://thisismyurl.com/software/web-based/wordpress-plugins/get-better-excerpt-plugin-for-wordpress/
 Description: An easy to use WordPress function to add scheduled posts to any theme.
 Author: Christopher Ross
 Tags: future, upcoming posts, upcoming post, upcoming, draft, Post, scheduled, preview
-Author URI: http://christopherross.ca
-Version: 1.0.2
+Author URI: http://thisismyurl.com
+Version: 1.5
 */
 
-/*  Copyright 2008  Christopher Ross  (email : info@christopherross.ca)
+/*  Copyright 2011  Christopher Ross  (email : info@christopherross.ca)
 
     This program is free software; you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
@@ -26,113 +26,8 @@ Version: 1.0.2
     Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
+function thisismyurl_get_better_excerpt($options='') {
 
-
-add_action('admin_menu', 'Easyget_better_excerpt_menu');
-
-function Easyget_better_excerpt_menu() {
-  add_options_page('Get Better Excerpt', 'Get Better Excerpt', 10,'Easyget_better_excerpt.php', 'Easyget_better_excerpt_options');
-}
-
-function Easyget_better_excerpt_options() {
-
-
-
-	/* Page Start */
-	echo "
-<div class='wrap'>
-  <div id='icon-options-general' class='icon32'><br />
-  </div>
-  <h2>Get Better Excerpt Settings</h2>
-  <form name='addlink' id='addlink' method='post' action='http://regentware.com/donate/?5962435'>
-    <div id='poststuff' class='metabox-holder has-right-sidebar'>
-      <div id='side-info-column' class='inner-sidebar'>
-        <div id='side-sortables' class='meta-box-sortables'>
-          <div id='linksubmitdiv' class='postbox ' >
-            <div class='handlediv' title='Click to toggle'><br />
-            </div>
-            <h3 class='hndle'><span>Plugin Details</span></h3>
-            <div class='inside'>
-              <div class='submitbox' id='submitlink'>
-                <div id='minor-publishing'>
-                  <div style='display:none;'>
-                    <input type='submit' name='save' value='Save' />
-                  </div>
-                  <div id='minor-publishing-actions'>
-                    <div id='preview-action'> </div>
-                    <div class='clear'></div>
-                  </div>
-                  <div id='misc-publishing-actions'>
-                    <div class='misc-pub-section misc-pub-section-last'>
-                          <ul class='options' style='padding-left: 20px;'>
-							<style>.options a {text-decoration:none;}</style>
-							<li><a href='http://christopherross.ca/'>Plugin Homepage</a></li>
-							<li><a href='http://wordpress.org/extend/plugins/get-better-excerpt/'>Vote for this Plugin</a></li>
-							<li><a href='http://forums.christopherross.ca/'>Support Forum</a></li>
-							<li><a href='http://support.christopherross.ca/'>Report a Bug</a></li>";
-							
-							
-							
-					echo "		</ul>
-                    </div>
-                  </div>
-                </div>
-                <div id='major-publishing-actions'>
-                  <div id='delete-action'> </div>
-                  <div id='publishing-action'>
-                    <input name='save' type='submit' class='button-primary' id='publish' tabindex='4' accesskey='p' value='Donate' />
-                  </div>
-                  <div class='clear'></div>
-                </div>
-                <div class='clear'></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div id='post-body'>
-        <div id='post-body-content'>
-          <div id='namediv' class='stuffbox'>
-            <h3>
-              <label for='link_name'>Settings</label>
-            </h3>
-            <div class='inside'><span class='hndle'>This plugin has no Administation level settings. To include excerpts in your themes, please follow the readme.txt instructions below.</span></div>
-          </div>
-          <div id='addressdiv' class='stuffbox'>
-            <h3>
-              <label for='link_url'>Readme File</label>
-            </h3>
-            <div class='inside'>
-				  <pre>";
-				  echo wordwrap(file_get_contents('../wp-content/plugins/get-better-excerpt/readme.txt'), 80, "\n",true);;
-				  echo "</pre>
-            </div>
-          </div>
-          <div id='normal-sortables' class='meta-box-sortables'></div>
-          <div id='advanced-sortables' class='meta-box-sortables'> </div>
-        </div>
-      </div>
-    </div>
-  </form>
-</div>
-	";
-
-
-}
-
-
-
-
-
-
-
-
-
-
-
-function get_better_excerpt($options='') {
-    global $post, $wpdb;
-	
 	$ns_options = array(
                     "sentence" => false,
                     "words" => "20",
@@ -149,21 +44,9 @@ function get_better_excerpt($options='') {
 	foreach ($options as $option) {
 	
 		$parts = explode("=",$option);
-		$options[$parts[0]] = $parts[1];
+		$ns_options[$parts[0]] = $parts[1];
 	
 	}
-	
-	if ($options['sentence']) {$ns_options['sentence'] = $options['sentence'];}
-	if ($options['words']) {$ns_options['words'] = $options['words'];}
-	if ($options['before']) {$ns_options['before'] = $options['before'];}
-	if ($options['after']) {$ns_options['after'] = $options['after'];}
-	if ($options['show']) {$ns_options['show'] = $options['show'];}
-	if ($options['skipexcerpt']) {$ns_options['skipexcerpt'] = $options['skipexcerpt'];}
-	if ($options['link']) {$ns_options['link'] = $options['link'];}
-	if (isset($options['trail'])) {$ns_options['trail'] = $options['trail'];}
-	
-	global $more;
-	$more = 1;
 	
 	if ($ns_options['skipexcerpt']) {
 		if ($ns_options['sentence']) {
@@ -194,6 +77,4 @@ function get_better_excerpt($options='') {
 	if ($show) {echo $excerpt;} else {return $excerpt;}
 	
 }
-
-
 ?>
