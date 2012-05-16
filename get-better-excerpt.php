@@ -1,12 +1,12 @@
 <?php
 /*
-Plugin Name: Get Better Excerpt 
-Plugin URI: http://thisismyurl.com/software/web-based/wordpress-plugins/get-better-excerpt-plugin-for-wordpress/
-Description: An easy to use WordPress function to add scheduled posts to any theme.
+Plugin Name: Get Better Excerpt
+Plugin URI: http://thisismyurl.com/downloads/wordpress-plugins/get-better-excerpt
+Description: Returns the excerpt using whole words instead of partial
 Author: Christopher Ross
 Tags: future, upcoming posts, upcoming post, upcoming, draft, Post, scheduled, preview
 Author URI: http://thisismyurl.com
-Version: 1.5
+Version: 2.0.0
 */
 
 /*  Copyright 2011  Christopher Ross  (email : info@christopherross.ca)
@@ -26,55 +26,62 @@ Version: 1.5
     Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
 
-function thisismyurl_get_better_excerpt($options='') {
+function thisismyurl_get_better_excerpt( $args = NULL ) {
 
-	$ns_options = array(
-                    "sentence" => false,
-                    "words" => "20",
-                    "before"  => "",
-                    "after" => "",
-					"show" => false,
-					"skipexcerpt" => true,
-					"link" => false,
-					"trail" => " &#8230;",
-                   );
+	$defaults = 	array(
+						'sentence' => false,
+						'words' => '20',
+						'before'  => '',
+						'after' => '',
+						'show' => false,
+						'skipexcerpt' => true,
+						'link' => false,
+						'trail' => ' &#8230;',
+					);
+	$option = wp_parse_args( $args, $defaults );
 
-	$options = explode("&",$options);
-	
-	foreach ($options as $option) {
-	
-		$parts = explode("=",$option);
-		$ns_options[$parts[0]] = $parts[1];
-	
-	}
-	
-	if ($ns_options['skipexcerpt']) {
-		if ($ns_options['sentence']) {
-			$excerpt = explode('.', strip_tags(get_the_content()), $ns_options['sentence']+1);
+
+	/** check to see this is at least WordPress 3.3 **/
+	if ( function_exists( 'wp_trim_words' ) ) {
+
+		if ( $option['skipexcerpt'] ) {
+
+			if ( $option['sentence'] )
+				$excerpt_array = explode( '.', strip_tags( get_the_content() ), $option['sentence']+1 );
+			else
+				$excerpt = wp_trim_words( get_the_content(), $option['words'], $option['trail'] );
+
 		} else {
-			$excerpt = explode(' ', strip_tags(get_the_content()), $ns_options['words']+1);
+
+			if ( $option['sentence'] )
+				$excerpt_array = explode( '.', strip_tags( get_the_excerpt() ), $option['sentence']+1 );
+			else
+				$excerpt = wp_trim_words( get_the_excerpt(), $option['words'], $option['trail'] );
+
 		}
-	} else {
-		if ($ns_options['sentence']) {
-			$excerpt = explode('.', strip_tags(get_the_excerpt()), $ns_options['sentence']+1);
-		} else {
-			$excerpt = explode(' ', strip_tags(get_the_excerpt()), $ns_options['words']+1);
-		}	
-	}
-	
-	array_pop($excerpt);
-	$excerpt = implode(" ",$excerpt);
-	$excerpt = $excerpt.$ns_options['trail'];
-	
-	if ($link) {
-		$link = get_permalink();
-		$title = get_the_title();
-		$excerpt = "<a href='$link' title='$title'>".$excerpt."</a>";
-	}
-	
-	$excerpt = $ns_options['before'].$excerpt.$ns_options['after'];
 
-	if ($show) {echo $excerpt;} else {return $excerpt;}
-	
+		if ( $excerpt_array )
+			$excerpt = $excerpt_array[0] . ' ' . $option['trail'] ;
+
+
+		if ( $option['link'] )
+			$excerpt = '<a href="' . get_permalink() . '" title="' . esc_attr( get_the_title() ) . '">'.$excerpt.'</a>';
+
+		$excerpt = $option['before'] . $excerpt . $option['after'];
+
+		if ( $option['show'] )
+			echo $excerpt;
+		else
+			return $excerpt;
+
+	} else {
+
+		/** the wp_trim_words() function doesn't exist **/
+
+		if ( $option['show'] )
+			echo get_the_excerpt();
+		else
+			return get_the_excerpt();
+
+	}
 }
-?>
