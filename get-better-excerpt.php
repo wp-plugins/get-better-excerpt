@@ -1,30 +1,27 @@
 <?php
 /*
 Plugin Name: Get Better Excerpt
-Plugin URI: http://thisismyurl.com/downloads/wordpress-plugins/get-better-excerpt
+Plugin URI: http://thisismyurl.com/plugins/get-better-excerpt/
 Description: Returns the excerpt using whole words instead of partial
 Author: Christopher Ross
-Tags: future, upcoming posts, upcoming post, upcoming, draft, Post, scheduled, preview
-Author URI: http://thisismyurl.com
+Tags: get excerpt, get better excerpt, excerpt
+Author URI: http://thisismyurl.com/
 Version: 2.0.0
 */
 
-/*  Copyright 2011  Christopher Ross  (email : info@christopherross.ca)
-
-    This program is free software; you can redistribute it and/or modify
-    it under the terms of the GNU General Public License as published by
-    the Free Software Foundation; either version 2 of the License, or
-    (at your option) any later version.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program; if not, write to the Free Software
-    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
-*/
+/**
+ *  Get Better Excerpt core file
+ *
+ * This file contains all the logic required for the plugin
+ *
+ * @link		http://wordpress.org/extend/plugins/get-better-excerpt/
+ *
+ * @package 		Get Better Excerpt
+ * @copyright		Copyright (c) 2008, Chrsitopher Ross
+ * @license		http://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU General Public License, v2 (or newer)
+ *
+ * @since 		Get Better Excerpt 1.0
+ */
 
 function thisismyurl_get_better_excerpt( $args = NULL ) {
 

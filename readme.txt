@@ -1,10 +1,10 @@
 === Plugin Name ===
 Contributors: christopherross
-Plugin URI: http://thisismyurl.com/downloads/wordpress/plugins/get-better-excerpt/
+Plugin URI: http://thisismyurl.com/plugins/get-better-excerpt/
 Tags: wordpress,theme,excerpt,words, plugin, post, posts
 Donate link:  http://thisismyurl.com/
 Requires at least: 2.0.0
-Tested up to: 3.3.2
+Tested up to: 3.5.1
 Stable tag: 2.0.0
 
 The Get Better Excerpt plugin works almost identical to the built in get_the_excerpt() and the_excerpt() functions except it returns whole words instead of cutting off the excerpt as the existing function does.
@@ -13,6 +13,8 @@ The Get Better Excerpt plugin works almost identical to the built in get_the_exc
 
 The Get Better Excerpt plugin works almost identical to the built in get_the_excerpt() and the_excerpt() functions except it returns whole words instead of cutting off the excerpt as the existing function does.
 
+This plugin is maintained by Christopher Ross, http://thisismyurl.com or you can find him on Twitter at http://twitter.com/thisismyurl/
+
 == Installation ==
 
 To install the plugin, please upload the folder to your plugins folder and active the plugin.
@@ -20,7 +22,7 @@ To install the plugin, please upload the folder to your plugins folder and activ
 == Screenshots ==
 
 == Updates ==
-Updates to the plugin will be posted here, to [thisismyurl.com](http://thisismyurl.com/downloads/wordpress/plugins/get-better-excerpt/)
+Updates to the plugin will be posted here, to [thisismyurl.com](http://thisismyurl.com/plugins/get-better-excerpt/)
 
 == Frequently Asked Questions ==
 
@@ -74,7 +76,7 @@ Finally, if you'd like to copy the results into a variable you can return the re
 
 
 == Donations ==
-If you would like to donate to help support future development of this tool, please visit [thisismyurl.com](http://thisismyurl.com/downloads/wordpress/plugins/get-better-excerpt/)
+If you would like to donate to help support future development of this tool, please visit [thisismyurl.com](http://thisismyurl.com/plugins/get-better-excerpt/)
 
 
 == Change Log ==
